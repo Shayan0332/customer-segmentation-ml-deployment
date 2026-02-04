@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Segmentation App</title>
+
+    <!-- Link CSS correctly -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Customer Segmentation</h1>
+        <p>K-Means Machine Learning Model Deployment</p>
+
+        <form method="POST">
+            <input type="number" name="orders" placeholder="Number of Orders" required>
+            <input type="number" name="quantity" placeholder="Total Quantity" required>
+            <input type="number" name="spending" placeholder="Total Spending" required>
+
+            <button type="submit">Predict Customer Segment</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <h2>Prediction Result</h2>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
